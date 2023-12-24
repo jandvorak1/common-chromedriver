@@ -26,4 +26,4 @@ compile group: 'com.dvoraksw.cch', name: 'common-chromedriver', version: '0.1.0'
 
 ## References
 
-This project has been inspired by shields.io and mavenbadges.
+This project has been inspired by.
