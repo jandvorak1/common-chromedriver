@@ -7,7 +7,7 @@ chromedriver will be launched in the path specified in the PATH environment vari
 supports Java 21 and newer versions
 
 Common-chromedriver is still in development and currently implements only the most commonly used functionalities. If you
-find any missing features, please feel free to open an issue without hesitation.
+find any missing features for your project, please feel free to open an issue without hesitation.
 
 ## Prerequisites
 
@@ -59,6 +59,7 @@ find any missing features, please feel free to open an issue without hesitation.
 
 The implementation is based on the W3C [WebDriver specification version 2](https://www.w3.org/TR/webdriver2/). So far,
 the following functions have been implemented (in alphabetical order):
+
 * addCookie
 * elementDisplayed
 * executeScript
@@ -69,7 +70,7 @@ the following functions have been implemented (in alphabetical order):
 * status
 * takeScreenshot
 
-If you find any missing features, please feel free to open an issue without hesitation. 
+If you find any missing features for your project, please feel free to open an issue without hesitation.
 
 ## Dependency
 
