@@ -31,7 +31,7 @@ class Connector {
       return response.body();
     } catch (InterruptedException | IOException e) {
       // Handling errors
-      throw new ChromeDriverException(e.getMessage());
+      throw new ChromeDriverException(e);
     }
   }
 }
