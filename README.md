@@ -21,43 +21,44 @@ find any missing features, please feel free to open an issue without hesitation.
 
 ```java
 // List of Chrome driver arguments, this example will run the browser in the background.
-private final List<String> args =
-      List.of(
-          "window-size=1440,900",
-          "disable-extensions",
-          "disable-gpu",
-          "disable-logging",
-          "disable-dev-shm-usage",
-          "remote-allow-origins=*",
-          "proxy-auto-detect",
-          "safebrowsing-disable-download-protection",
-          "safebrowsing-disable-extension-blacklist",
-          "webview-disable-safebrowsing-support",
-          "headless=new",
-          "no-sandbox");
+    var args =
+            List.of(
+                    "window-size=1440,900",
+                    "disable-extensions",
+                    "disable-gpu",
+                    "disable-logging",
+                    "disable-dev-shm-usage",
+                    "remote-allow-origins=*",
+                    "proxy-auto-detect",
+                    "safebrowsing-disable-download-protection",
+                    "safebrowsing-disable-extension-blacklist",
+                    "webview-disable-safebrowsing-support",
+                    "headless=new",
+                    "no-sandbox");
 
-// It will launch chromedriver in the background and automatically close it because it implements the AutCcloseable interface.
-try (var driver = new ChromeDriver()) {
-    // Create driver session
-    var sessionId = driver.newSession(args);
-    
-    // Navigate to test page
-    driver.navigateTo(sessionId, URI.create(""https://www.google.com"");
-    
-    // Read page title and print it to a console
-    System.out.println(driver.getTitle(sessionId));
-     
-    // Delete driver session
-    driver.deleteSession(sessionId)
-} catch (ChromeDriverException e) {
-    e.printStackTrace();
-}
+// It will launch chromedriver in the background and automatically close it because it implements
+// the AutoCloseable interface.
+    try (var driver = new ChromeDriver()) {
+      // Create driver session
+      var sessionId = driver.newSession(args);
+
+      // Navigate to test page
+      driver.navigateTo(sessionId, URI.create("https://www.google.com"));
+
+      // Read page title and print it to a console
+      System.out.println(driver.getTitle(sessionId));
+
+      // Delete driver session
+      driver.deleteSession(sessionId);
+    } catch (ChromeDriverException e) {
+      e.printStackTrace();
+    }
 ```
 
 ## Implemented functions
 
-The implementation is based on the W3C WebDriver specification version 2. So far, the following functions have been
-implemented (in alphabetical order):
+The implementation is based on the W3C [WebDriver specification version 2](https://www.w3.org/TR/webdriver2/). So far,
+the following functions have been implemented (in alphabetical order):
 * addCookie
 * elementDisplayed
 * executeScript
@@ -65,7 +66,9 @@ implemented (in alphabetical order):
 * getElementAttribute
 * getElementPropery
 * navigateTo
+* status
 * takeScreenshot
+If you find any missing features, please feel free to open an issue without hesitation. 
 
 ## Dependency
 
