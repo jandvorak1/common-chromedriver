@@ -1,5 +1,7 @@
 plugins {
     java
+    `maven-publish`
+    signing
 }
 
 repositories {
@@ -20,6 +22,53 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
     withJavadocJar()
     withSourcesJar()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.dvoraksw.cch"
+            artifactId = "common-chromedriver"
+            version = "0.1.0"
+            from(components["java"])
+            pom {
+                name = "Common ChromeDriver"
+                description = "Simple framework for remote controlling the Chrome or Chromium browser using the ChromeDriver driver."
+                url = "https://github.com/jandvorak1/common-chromedriver"
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "dvorak1"
+                        name = "Jan Dvorak"
+                        email = "jan.dvorak@dvorak-sw.com"
+                    }
+                }
+                scm {
+                    connection = "scm:git:git@github.com:jandvorak1/common-chromedriver.git"
+                    developerConnection = "scm:git:ssh://github.com:jandvorak1/common-chromedriver.git"
+                    url = "https://github.com/jandvorak1/common-chromedriver/tree/master"
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            val releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
+            name = "ossrh"
+            credentials(PasswordCredentials::class)
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications["maven"])
 }
 
 tasks.jar {
@@ -52,4 +101,10 @@ tasks.compileJava {
 
 tasks.compileTestJava {
     options.encoding = "UTF-8"
+}
+
+tasks.javadoc {
+    if (JavaVersion.current().isJava9Compatible) {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+    }
 }
