@@ -66,6 +66,7 @@ the following functions have been implemented (in alphabetical order):
 * findElement
 * getElementAttribute
 * getElementPropery
+* getTitle
 * navigateTo
 * status
 * takeScreenshot
