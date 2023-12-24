@@ -68,6 +68,7 @@ the following functions have been implemented (in alphabetical order):
 * navigateTo
 * status
 * takeScreenshot
+
 If you find any missing features, please feel free to open an issue without hesitation. 
 
 ## Dependency
