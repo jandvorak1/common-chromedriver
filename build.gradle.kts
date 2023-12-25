@@ -9,7 +9,7 @@ repositories {
 }
 
 group = "com.dvoraksw.cch"
-version = "0.1.0"
+version = "0.2.0"
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
@@ -29,7 +29,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.dvoraksw.cch"
             artifactId = "common-chromedriver"
-            version = "0.1.0"
+            version = "0.2.0"
             from(components["java"])
             pom {
                 name = "Common ChromeDriver"
