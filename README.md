@@ -9,6 +9,8 @@ supports Java 21 and newer versions
 Common-chromedriver is still in development and currently implements only the most commonly used functionalities. If you
 find any missing features for your project, please feel free to open an issue without hesitation.
 
+I created common-chromedriver specifically for use in my projects, and if you'd like, you can use it too.
+
 ## Prerequisites
 
 * Download and install the [Chrome](https://www.google.com/chrome/)
