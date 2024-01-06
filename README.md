@@ -2,7 +2,7 @@
 
 Common-chromedriver is a simple framework for remote controlling the [Chrome](https://www.google.com/chrome/)
 or [Chromium](https://www.chromium.org/Home/) browser using the [ChromeDriver](https://chromedriver.chromium.org)
-driver. Easy installation, simple usage, only one dependency (gson), support for Java9+ modules. By default,
+driver. Easy installation, simple usage, only one dependency (gson), support for Java 9+ modules. By default,
 chromedriver will be launched in the path specified in the PATH environment variable and on port 9115. The framework
 supports Java 21 and newer versions
 
